@@ -1,123 +1,81 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #e0eafc, #cfdef3); /* Light gradient background */
-    color: #333;
-    animation: fadeIn 1s ease; /* Fade-in animation for body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); /* Dark gradient background */
+    background-size: 400% 400%; /* For smooth animation */
+    animation: waterFlow 8s ease infinite; /* Apply the animation */
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@keyframes waterFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+.calculator {
+    background: linear-gradient(135deg, #2c3e50, #3498db); /* Unique & darker gradient for calculator */
+    padding: 30px; /* Increased padding for larger size */
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 380px; /* Increased width for larger calculator */
 }
 
-header {
-    background: #007bff;
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: slideIn 1s ease; /* Slide-in animation for header */
-}
-
-@keyframes slideIn {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-h1 {
-    margin-bottom: 10px;
-}
-
-.social-links {
-    margin-top: 10px;
-}
-
-.social-links a {
-    margin: 0 10px;
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: #ffc107; /* Highlight on hover */
-}
-
-.cta {
-    margin: 20px 0;
-}
-
-.banner-image {
+#display {
     width: 100%;
-    max-width: 600px;
-    border-radius: 8px;
-    transition: transform 0.3s; /* Animation for image */
+    height: 70px; /* Increased display height */
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    text-align: right;
+    font-size: 32px; /* Larger text size for display */
+    padding-right: 10px;
+    margin-bottom: 20px; /* More margin for better spacing */
 }
 
-.banner-image:hover {
-    transform: scale(1.05); /* Scale effect on hover */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px; /* Increased gap for button spacing */
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #28a745;
+button {
+    background: linear-gradient(135deg, #34495e, #2ecc71); /* Button gradient */
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s; /* Animation for button */
+    border: none;
+    padding: 25px; /* Increased button size */
+    border-radius: 10px;
+    font-size: 22px; /* Larger button text */
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.cta-button:hover {
-    background-color: #218838;
-    transform: scale(1.05); /* Scale effect on hover */
+button:hover {
+    background: linear-gradient(135deg, #2ecc71, #34495e); /* Hover effect */
 }
 
-.features {
-    margin-top: 40px;
+.zero {
+    grid-column: span 2;
 }
 
-.features h2 {
-    margin-bottom: 20px;
+.clear {
+    background: #e74c3c;
 }
 
-.feature {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 20px;
-    display: inline-block;
-    width: 30%;
-    vertical-align: top;
-    transition: transform 0.3s; /* Animation for feature cards */
-}
-
-.feature:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-}
-
-.feature-image {
-    width: 100%;
-    max-width: 200px;
-    border-radius: 8px;
-}
-
-footer {
-    margin-top: 30px;
-    font-size: 14px;
-    color: #666;
+.delete {
+    background: #f39c12;
 }
